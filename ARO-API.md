@@ -1,4 +1,4 @@
-## Frontend API call(s) to the local-rp
+## Make admin-action API call(s) to the local-rp
 
 ```
 export CLUSTER=cluster
