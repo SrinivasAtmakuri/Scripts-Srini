@@ -14,7 +14,7 @@ echo "$WORKER_SUBNET=srini-worker-subnet" >> $PWD/env
 
 source ./env
 
-az group create \
+/usr/bin/az group create \
   --name $RESOURCEGROUP \
   --location $LOCATION
 
