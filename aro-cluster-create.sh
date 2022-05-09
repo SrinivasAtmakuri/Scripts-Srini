@@ -2,7 +2,7 @@
 
 # Link: https://docs.microsoft.com/en-us/azure/openshift/tutorial-create-cluster
 
-/usr/bin/az login
+# /usr/bin/az login
 touch $PWD/env
 
 USER=$1
@@ -11,14 +11,13 @@ if [ -z "$1" ]; then
 fi
 
 echo "RESOURCEGROUP=$USER-aro" >> $PWD/env
-echo "$LOCATION=eastus" >> $PWD/env
-echo "$CLUSTER=$USER-prod-test" >> $PWD/env
-echo "$VNET=$USER-aro-vnet" >> $PWD/env
-echo "$MASTER_SUBNET=$USER-master-subnet" >> $PWD/env
-echo "$WORKER_SUBNET=$USER-worker-subnet" >> $PWD/env
+echo "LOCATION=eastus" >> $PWD/env
+echo "CLUSTER=$USER-prod-test" >> $PWD/env
+echo "VNET=$USER-aro-vnet" >> $PWD/env
+echo "MASTER_SUBNET=$USER-master-subnet" >> $PWD/env
+echo "WORKER_SUBNET=$USER-worker-subnet" >> $PWD/env
 
 source ./env
-exit
 
 /usr/bin/az group create \
   --name $RESOURCEGROUP \
