@@ -5,6 +5,11 @@
 /usr/bin/az login
 touch $PWD/env
 
+USER=$1
+if [ -z "$1" ]; then
+  USER=srini
+fi
+
 echo "RESOURCEGROUP=srini-aro" >> $PWD/env
 echo "$LOCATION=eastus" >> $PWD/env
 echo "$CLUSTER=srini-prod-test" >> $PWD/env
