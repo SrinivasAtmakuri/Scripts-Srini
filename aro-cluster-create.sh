@@ -10,14 +10,15 @@ if [ -z "$1" ]; then
   USER=srini
 fi
 
-echo "RESOURCEGROUP=srini-aro" >> $PWD/env
+echo "RESOURCEGROUP=$USER-aro" >> $PWD/env
 echo "$LOCATION=eastus" >> $PWD/env
-echo "$CLUSTER=srini-prod-test" >> $PWD/env
-echo "$VNET=srini-aro-vnet" >> $PWD/env
-echo "$MASTER_SUBNET=srini-master-subnet" >> $PWD/env
-echo "$WORKER_SUBNET=srini-worker-subnet" >> $PWD/env
+echo "$CLUSTER=$USER-prod-test" >> $PWD/env
+echo "$VNET=$USER-aro-vnet" >> $PWD/env
+echo "$MASTER_SUBNET=$USER-master-subnet" >> $PWD/env
+echo "$WORKER_SUBNET=$USER-worker-subnet" >> $PWD/env
 
 source ./env
+exit
 
 /usr/bin/az group create \
   --name $RESOURCEGROUP \
