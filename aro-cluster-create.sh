@@ -43,6 +43,6 @@ az group create \
 /usr/bin/az aro create \
   --resource-group $RESOURCEGROUP \
   --name $CLUSTER \
-  --vnet srini-aro-vnet \
+  --vnet $VNET \
   --master-subnet $MASTER_SUBNET \
   --worker-subnet $WORKER_SUBNET
