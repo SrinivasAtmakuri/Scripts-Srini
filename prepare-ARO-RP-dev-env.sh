@@ -3,6 +3,7 @@
 cd $PWD; /usr/bin/wget https://go.dev/dl/go1.17.3.linux-amd64.tar.gz
 sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf $PWD/go1.17.3.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
+/usr/bin/echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc
 
 sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 
@@ -34,7 +35,7 @@ cd $PWD/ARO-RP
 /usr/bin/make az
 
 # grep -q 'dev_sources' ~/.azure/config || cat >>~/.azure/config <<EOF
-SECRET_SA_ACCOUNT_NAME=rharosecrets /usr/bin/make secrets
+SECRET_SA_ACCOUNT_NAME=rharodevsecrets /usr/bin/make secrets
 
 /usr/bin/cp env.example env
 echo "" >> env
