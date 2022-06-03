@@ -1,0 +1,22 @@
+apiVersion: hive.openshift.io/v1
+kind: ClusterDeployment
+metadata:
+  name: sud-prod-test
+  namespace: hive
+spec:
+  baseDomain: srini.osadev.cloud
+  clusterMetadata:
+    adminKubeconfigSecretRef:
+      name: sud-admin-kubeconfig
+    clusterID: af42f420-72f1-4d46-a257-c66765c77829
+    infraID: sud-prod-test-qw8rk
+  clusterName: sud-prod-test
+  installed: true
+  platform:
+    azure:
+      baseDomainResourceGroupName: sud-aro
+      credentialsSecretRef:
+        name: srini-azure-creds
+      region: eastus
+  pullSecretRef:
+    name: srini-pull-secret
